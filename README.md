@@ -18,3 +18,9 @@ $  pipenv install
 $  python3 main.py
 ```
 
+5、打包为可执行文件
+
+```
+$  python3 -m pip install pyinstaller
+$  pyinstaller -F main.py
+```
