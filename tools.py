@@ -36,7 +36,7 @@ def get_exam_link(area):
   for _index in range(10):
     r = requests.get(_link)
     r.encoding = 'utf-8'
-    soup = BeautifulSoup(r.content, features='lxml')
+    soup = BeautifulSoup(r.content, features='html.parser')
     _list = soup.find_all(
       'a', 
       href=re.compile('http://www.shiyebian.net/xinxi'),
