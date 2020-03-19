@@ -18,6 +18,4 @@ if len(unmatch_words) > 0:
 
 result += get_exam_links_str()
 
-print(result)
-
 send_mail('最新事业单位招聘', result, 'html')
