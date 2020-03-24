@@ -77,6 +77,6 @@ def get_exam_links_str():
           <a href="' + links[i].attrs['href'] + '">' + links[i].string + '</a>\
         </li>\
       '
-    exam_links_str += '<ul>'
+    exam_links_str += '</ul>'
   
   return exam_links_str
