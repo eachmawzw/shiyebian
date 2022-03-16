@@ -31,3 +31,9 @@ $  python3 main.py
 $  python3 -m pip install pyinstaller
 $  pyinstaller -F main.py
 ```
+
+注：如果打包后，运行可执行文件提示找不到依赖，可能是打包方式有误，将依赖目录加入打包命令参数中
+
+```
+$ pyinstaller main.py -F -p ~/.local/share/virtualenvs/shiyebian-tqFfELCF/lib/python3.7/site-packages
+```

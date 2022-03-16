@@ -21,7 +21,7 @@ def send_mail(title, content, plain = 'plain'):
   message['Subject'] = Header(title, 'utf-8')
   try:
     smtpObj = smtplib.SMTP()
-    smtpObj.connect(mail_host, 25)    # 25 为 SMTP 端口号
+    smtpObj.connect(mail_host, 25)    # 25 为 SMTP 端口号,海外服务器请使用 587 端口
     smtpObj.login(mail_user,mail_pass)
     smtpObj.sendmail(sender, receivers, message.as_string())
     print('邮件发送成功')
