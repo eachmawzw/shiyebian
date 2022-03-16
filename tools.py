@@ -1,10 +1,10 @@
 import re
 import requests
 from bs4 import BeautifulSoup
-from custom import match_words,unmatch_words,love_provinces
+from custom import must_words,match_words,unmatch_words,love_provinces
 from constant import area_links
 
-def match_reg_exp(keywords):
+def must_reg_exp(keywords):
   _end = '^.*$'
   reg_str = '(?=.*match)'
   reg = ''
@@ -13,7 +13,7 @@ def match_reg_exp(keywords):
   reg += _end
   return reg
 
-def unmatch_reg_exp(keywords):
+def match_reg_exp(keywords):
   _start = '(?:'
   _end = ')'
   reg = ''
@@ -26,8 +26,9 @@ def unmatch_reg_exp(keywords):
 def match_fun(text):
   return (
     text and
+    re.compile(must_reg_exp(must_words)).search(text) and
     re.compile(match_reg_exp(match_words)).search(text) and
-    not re.compile(unmatch_reg_exp(unmatch_words)).search(text)
+    not re.compile(match_reg_exp(unmatch_words)).search(text)
   )
 
 def get_exam_link(area):

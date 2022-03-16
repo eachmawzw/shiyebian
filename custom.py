@@ -1,5 +1,11 @@
-match_words = [
+must_words = [
   '2022年'
+]
+
+match_words = [
+  '湖南省',
+  '长沙',
+  '岳阳'
 ]
 
 unmatch_words = [
